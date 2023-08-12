@@ -1,0 +1,42 @@
+#+TITLE: Secrit
+
+* Introduction
+
+Secrit is a simple Ruby gem designed to interact with the 'pass' Password-Store generated keys.
+
+* Installation
+
+First, ensure that you have the `~/.password-store/` directory available as the library uses it as the default storage path.
+
+To install the Secrit library, you can simply use pip:
+
+#+BEGIN_SRC bash
+gem install secrit
+#+END_SRC
+
+* Usage
+
+** Retrieve a Password
+
+To retrieve a decrypted content of a password store entry, use the `get` function:
+
+#+BEGIN_SRC python
+require 'secrit'
+
+# You will be prompted for your master password which will then load the decripted
+# contents of ~/.password-store/github/token.gpg
+api_key = Secrit.get('github/token')
+#+END_SRC
+
+* Requirements
+
+- Ruby 3
+- gpgme
+
+* Development
+
+To contribute or report issues, please visit the [[https://github.com/hard-simp/secrit.rb][GitHub repository]].
+
+* License
+
+MIT
