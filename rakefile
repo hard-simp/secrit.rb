@@ -1,0 +1,23 @@
+require 'rake'
+require 'rubygems'
+require 'rubygems/package_task'
+
+spec = Gem::Specification.load('secrit.gemspec')
+
+Gem::PackageTask.new(spec) do |pkg|
+  pkg.need_zip = false
+  pkg.need_tar = false
+end
+
+desc 'Build the gem'
+task default: :gem
+
+desc 'Clean up generated files'
+task :clean do
+  rm_rf 'pkg'
+end
+
+desc 'Push the gem to RubyGems.org'
+task :push => :gem do
+  sh "gem push pkg/#{spec.name}-#{spec.version}.gem"
+end
