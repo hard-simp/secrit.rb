@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name          = "secrit"
-  spec.version       = "0.0.1"
-  spec.summary       = "Decrypt passwords in Password-Store ('pass')"
+  spec.version       = "0.0.3"
+  spec.summary       = "Use Password-Store ('pass') managed secrets in your Ruby"
   spec.description   = "This gem provides a method to decrypt and retrieve secrets from Password-Store ('pass' cli tool; see: https://www.passwordstore.org/)."
   spec.authors       = ["Simpthy"]
 
