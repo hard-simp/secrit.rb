@@ -1,6 +1,22 @@
 #!/usr/bin/env ruby
 require 'gpgme'
 
+# Define an interface (or contract) for decryption
+class Decryptor
+  def decrypt(file_path)
+    raise NotImplementedError
+  end
+end
+
+# Provide a default implementation
+class GPGDecryptor < Decryptor
+  def decrypt(file_path)
+    crypto = GPGME::Crypto.new
+    decrypted_data = crypto.decrypt(File.open(file_path))
+    #decrypted_data.to_s.strip
+    decrypted_data
+  end
+end
 
 class Secrit
   attr_accessor :storage
