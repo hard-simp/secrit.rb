@@ -6,8 +6,12 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Simpthy"]
 
   spec.files         = ["lib/secrit.rb"]
+  spec.files        += Dir["test/**/*"]
+
   spec.require_paths = ["lib"]
   spec.add_dependency "gpgme", "~> 2.0.22"
+  spec.add_development_dependency 'minitest', '~> 5.0'
+  spec.add_development_dependency 'mocha', '~> 1.11'
 
   spec.homepage      = "https://github.com/hard-simp/secrit.rb"
   spec.license       = "MIT"

@@ -21,3 +21,9 @@ desc 'Push the gem to RubyGems.org'
 task :push => :gem do
   sh "gem push pkg/#{spec.name}-#{spec.version}.gem"
 end
+
+
+desc 'Run the tests'
+task :test do
+  sh "ruby -Ilib:test test/secrit_test.rb"
+end
